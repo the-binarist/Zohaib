@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark light">
+    <title>Zohaib &mdash; Freelance Web Designer &amp; Developer</title>
+    <meta name="description" content="Zohaib is an independent web designer and developer building thoughtful, high-quality websites for small businesses and founders.">
+    <meta name="author" content="Zohaib">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zohaib &mdash; Freelance Web Designer &amp; Developer">
+    <meta property="og:description" content="A web design &amp; development case study: thoughtful, high-quality websites for small businesses and early-stage founders.">
+    <meta property="og:image" content="images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zohaib &mdash; Freelance Web Designer &amp; Developer">
+    <meta name="twitter:description" content="A web design &amp; development case study for small businesses and early-stage founders.">
+    <meta name="twitter:image" content="images/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script>
+        (function () {
+            var KEY = "zohaib-theme";
+            var t = null;
+            try { t = localStorage.getItem(KEY); } catch (e) {}
+            if (t !== "light" && t !== "dark") t = "dark";
+            var r = document.documentElement;
+            r.classList.toggle("dark", t === "dark");
+            r.classList.toggle("light", t === "light");
+            r.style.colorScheme = t;
+            var m = document.createElement("meta");
+            m.name = "theme-color";
+            m.id = "theme-color-meta";
+            m.content = t === "dark" ? "#0A0A0B" : "#EFEDEA";
+            document.head.appendChild(m);
+        })();
+    </script>
+
+    <link href="assets/fonts.css" rel="stylesheet">
+    <link href="css/enhancements.css" rel="stylesheet">
+    <link href="css/theme-dark.css" rel="stylesheet">
+
+    <script defer src="js/bundle.js"></script>
+    <script defer src="js/enhancements.js"></script>
+    <script defer src="js/theme-toggle.js"></script>
+</head>
+<body>
+    <noscript>
+        <main style="max-width:36rem;margin:12vh auto;padding:0 1.5rem;font-family:system-ui,sans-serif;line-height:1.6">
+            <h1>Zohaib</h1>
+            <p>Independent web designer and developer building thoughtful, high-quality websites for small businesses and early-stage founders.</p>
+            <p>This case study uses JavaScript for its scroll animations. Please enable it, or get in touch directly at <a href="mailto:zohaib.abdollah@gmail.com">zohaib.abdollah@gmail.com</a>.</p>
+        </main>
+    </noscript>
+    <div id="root"></div>
+</body>
+</html>

@@ -1,0 +1,710 @@
+/* =====================================================================
+   Dark-first theme layer (loads after enhancements.d6e80.css)
+   html.dark = default; html.light = original premium ivory theme.
+   Mock screens (browser, laptop, phones, devices) stay light on purpose:
+   they depict client websites and read as lit screens on the dark page.
+   ===================================================================== */
+
+html.dark:root {
+  --page: #0A0A0B !important;
+  --paper: #111113 !important;
+  --white: #17171A !important;
+  --stone: #2C2C31 !important;
+  --graphite: #BDBDC5 !important;
+  --charcoal: #D4D4D8 !important;
+  --ink: #EDEDEF !important;
+  --clay: #F0505E !important;
+  --clay-light: #FF7A85 !important;
+  --gold: #D9BC80;
+  --gold-soft: #E6D3A8;
+  --muted-ink: #A0A0A9;
+  --line: rgba(255,255,255,.08);
+  --line-strong: rgba(255,255,255,.14);
+  --glow: rgba(240,80,94,.16);
+  --shadow: 0 0 0 1px rgba(255,255,255,.06), 0 30px 60px -30px rgba(0,0,0,.8) !important;
+  --shadow-sm: 0 0 0 1px rgba(255,255,255,.06), 0 14px 28px -16px rgba(0,0,0,.7) !important;
+  --story-line: rgba(255,255,255,.12);
+  --da-ink: #EDEDEF;
+  --da-muted: #A1A1AA;
+  --da-line: rgba(255,255,255,.1);
+  --da-paper: #111113;
+  --da-red: #F0505E;
+  color-scheme: dark;
+}
+html.light:root { color-scheme: light; }
+
+/* Mock screens (demo pages) now use a dark palette too */
+html.dark .browser,
+html.dark .enh-browser,
+html.dark .phone-screen:not(.dark),
+html.dark .enh-device-shell,
+html.dark .da-rs-device {
+  --page: #000; --paper: #000; --white: #0e0e10; --stone: #2a2a2f;
+  --graphite: #bdbdc5; --charcoal: #d4d4d8; --ink: #ededef; --clay: #f0505e; --clay-light: #ff7a85;
+  --gold: #d9bc80; --gold-soft: #e6d3a8;
+  --shadow: 0 0 0 1px rgba(255,255,255,.07), 0 30px 60px -30px rgba(0,0,0,.8);
+  --shadow-sm: 0 0 0 1px rgba(255,255,255,.07), 0 14px 28px -16px rgba(0,0,0,.7);
+  --story-ink: #ededef; --story-paper: #000; --story-clay: #f0505e; --story-line: rgba(255,255,255,.14);
+  --da-ink: #ededef; --da-muted: #a1a1aa; --da-line: rgba(255,255,255,.1); --da-paper: #000; --da-red: #f0505e;
+  color-scheme: dark;
+  color: #ededef;
+}
+
+/* Base */
+html.dark, html.dark body { background: #0A0A0B !important; color: #EDEDEF !important; }
+html.dark ::selection { background: #F0505E; color: #0A0A0B; }
+html.dark :focus-visible { outline-color: #F0505E; }
+html.dark img:not(.browser img):not(.enh-browser img):not(.phone-screen img) { filter: brightness(.92); }
+
+/* ---------- Nav: smoked glass ---------- */
+html.dark .topnav {
+  background: linear-gradient(180deg, rgba(28,28,32,.72) 0%, rgba(16,16,18,.62) 100%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
+  backdrop-filter: blur(14px) saturate(1.2) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(255,255,255,.02), 0 24px 48px -24px rgba(0,0,0,.9), 0 0 0 1px rgba(0,0,0,.4) !important;
+}
+html.dark .topnav::before { background: linear-gradient(118deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.03) 30%, rgba(255,255,255,.02) 62%, rgba(240,80,94,.35) 100%); }
+html.dark .topnav::after { background: linear-gradient(104deg, transparent 34%, rgba(255,255,255,.06) 45%, transparent 60%); background-size: 260% 100%; }
+html.dark .topnav .wrap > nav a.nav-link { color: #A1A1AA; }
+html.dark .topnav .wrap > nav a.nav-link:hover { color: #EDEDEF; }
+html.dark .nav-cta { background: #000 !important; color: #F5F5F6 !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.22) !important; }
+html.dark .nav-cta:hover { background: #151517 !important; }
+
+/* ---------- Hero ---------- */
+html.dark .hero::before {
+  content: ""; position: absolute; inset: -10% -10% auto; height: 120%; z-index: 0; pointer-events: none;
+  background: radial-gradient(60% 50% at 30% 30%, rgba(138,16,32,.30), transparent 70%), radial-gradient(40% 40% at 85% 10%, rgba(240,80,94,.10), transparent 70%);
+}
+html.dark .enh-flickering-grid { opacity: .62 !important; }
+html.dark .hero h1, html.dark .hero h1 * { color: #F2EEE9 !important; text-shadow: none !important; }
+html.dark .hero h1 .enh-hero-punctuation { color: #F0505E !important; }
+html.dark .hero h1 .cv-layer, html.dark .hero h1 .cv-layer * { color: transparent !important; -webkit-text-fill-color: transparent !important; }
+html.dark .hero h1.kin-on .kin-ch { background-color: #F2EEE9 !important; }
+html.dark .hero p.f-serif {
+  color: #EDEDEF !important;
+  text-shadow: 0 0 3px rgba(10,10,11,.95), 0 0 12px rgba(10,10,11,.9), 0 0 26px rgba(10,10,11,.8) !important;
+}
+html.dark .hero p.f-serif em, html.dark .hero p.f-serif i { color: #FF7A85 !important; }
+html.dark .hero .browser { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 40px 120px -40px rgba(240,80,94,.28), 0 30px 60px -30px rgba(0,0,0,.9) !important; }
+
+/* ---------- Shared text + lines ---------- */
+html.dark p[class*="text-[var(--graphite)]"]:not(.f-mono), html.dark dd, html.dark .rs-p { color: #B4B4BC !important; }
+html.dark .lm-lede { color: #B4B4BC !important; }
+html.dark .hair, html.dark .goal-row { border-color: rgba(255,255,255,.09) !important; }
+html.dark .cap .line { background: rgba(255,255,255,.12); }
+html.dark .cap .num { color: #F0505E; }
+html.dark .chip.on { background: #EDEDEF; border-color: #EDEDEF; color: #0A0A0B; }
+html.dark .tone-paper { background: #111113 !important; }
+html.dark .tone-ink { --paper: #F2EEE9 !important; --white: #FFFFFF !important; background: radial-gradient(120% 90% at 85% 0%, #2a1013 0%, #140c0e 45%, #0c0809 100%) !important; border-top: 1px solid rgba(255,255,255,.06); }
+html.dark [data-testid="editorial-marquee"] { background: #111113 !important; border-color: rgba(255,255,255,.08) !important; }
+
+/* ---------- Showcase (laptop) ---------- */
+html.dark .lm-section { --lm-ink: #EDEDEF; --lm-paper: #111113; --lm-graphite: #C4C4CC; }
+html.dark .lm-screen { --lm-ink: #ededef; --lm-paper: #000; --lm-graphite: #c4c4cc; }
+html.dark .lm-row, html.dark .lm-now { border-top-color: rgba(255,255,255,.1) !important; }
+html.dark .lm-marker { color: #F0505E; }
+html.dark .lm-crop { border-color: rgba(255,255,255,.3); }
+html.dark .lm-shadow, html.dark .lm-cast, html.dark .lm-pencil-sh { opacity: .25; }
+
+/* ---------- Brief goals ---------- */
+html.dark .bg-ready .goal-row::before { background: #F0505E; box-shadow: 0 0 14px rgba(240,80,94,.6); }
+html.dark .bg-ready .goal-row:not(.is-current):not(:hover):not(:focus-within) > * { opacity: .62; }
+html.dark .bg-ready .goal-row > p { color: #B4B4BC !important; }
+html.dark .bg-ready .goal-row.is-current > span:first-child { color: #F0505E; }
+html.dark .bg-ready .goal-row.is-current > p { color: #EDEDEF !important; }
+html.dark .bg-ready .goal-row::after { color: #FF7A85; border-color: rgba(240,80,94,.45); background: rgba(240,80,94,.06); }
+
+/* ---------- Design approach ---------- */
+html.dark #approach.enh-design-approach {
+  --da-ink: #EDEDEF; --da-muted: #A1A1AA; --da-line: rgba(255,255,255,.09); --da-paper: #0E0E10; --da-red: #F0505E;
+  background: radial-gradient(70% 50% at 0% 0%, rgba(138,16,32,.14), transparent 70%), #0E0E10;
+  border-top-color: rgba(255,255,255,.08);
+}
+html.dark #approach .da-topline, html.dark #approach .da-bottomline,
+html.dark #approach .da-overline, html.dark #approach .da-current-meta { color: #A1A1AA !important; }
+html.dark #approach .da-current-meta span:first-child { color: #F0505E !important; }
+html.dark #approach .da-bottomline { border-top-color: rgba(255,255,255,.09); }
+html.dark #approach .da-step-nav button { color: #8B8B94; }
+html.dark #approach .da-step-nav button i { background: rgba(255,255,255,.14); }
+html.dark #approach .da-step-nav button.is-active { color: #F0505E; }
+html.dark #approach .da-step-nav button.is-active i { background: #F0505E; }
+html.dark #approach .da-principle { border-color: rgba(255,255,255,.07) !important; background: rgba(255,255,255,.015) !important; }
+html.dark #approach.da-motion-ready .da-principle.is-active { border-color: rgba(240,80,94,.35) !important; background: #141417 !important; box-shadow: 0 0 0 1px rgba(240,80,94,.08), 0 30px 60px -40px rgba(240,80,94,.35); }
+html.dark #approach .da-card-copy { color: #B4B4BC !important; }
+html.dark #approach .da-hierarchy-row { color: #B4B4BC; border-bottom-color: rgba(255,255,255,.07); }
+html.dark #approach .da-spacing-scale { border-bottom-color: rgba(255,255,255,.12); }
+html.dark #approach .da-spacing-scale span { color: #A1A1AA; }
+html.dark #approach .da-spacing-scale span::before, html.dark #approach .da-curve-point { background: #F0505E; fill: #F0505E; }
+html.dark #approach .da-curve-path { stroke: #F0505E; }
+html.dark #approach .da-curve-grid { stroke: rgba(255,255,255,.1); }
+html.dark #approach .da-spacing-caption, html.dark #approach .da-type-meta,
+html.dark #approach .da-motion-note span, html.dark #approach .da-rs-device-head span { color: #A1A1AA !important; }
+html.dark #approach .da-type-meta span:first-child, html.dark #approach .da-rs-device-head b,
+html.dark #approach .da-rs-device-head { color: #D4D4D8 !important; }
+html.dark #approach .da-rs-device-head span, html.dark #approach .da-rs-caption { color: #A1A1AA !important; }
+html.dark #approach .da-type-sample { border-top-color: rgba(255,255,255,.08); }
+html.dark #approach .da-responsive-rule { color: #B4B4BC; }
+
+/* ---------- Screens + Responsive chapters ---------- */
+html.dark { --story-line: rgba(255,255,255,.12); }
+html.dark .enh-story-intro { background: #141416; border: 1px solid rgba(255,255,255,.07); }
+html.dark .enh-story-number { color: #3A3A40; }
+html.dark .enh-story-title em, html.dark .enh-story-count, html.dark .enh-step-index { color: #FF7A85; }
+html.dark .enh-step::after { background: #F0505E; }
+html.dark .enh-story-canvas {
+  background: radial-gradient(circle at 57% 42%, #1E1E22 0%, #131315 61%, #0C0C0D 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+html.dark .enh-story-canvas::before { border-color: rgba(255,255,255,.07); }
+html.dark .enh-story-canvas::after, html.dark .enh-device-stage::after { color: #A1A1AA; }
+html.dark .enh-canvas-star { color: rgba(255,255,255,.14); }
+html.dark .enh-browser { box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 40px 90px -40px rgba(240,80,94,.22), 0 30px 50px -30px rgba(0,0,0,.9); }
+html.dark .enh-device-stage { background: radial-gradient(circle at 50% 45%, #1E1E22 0%, #121214 70%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+html.dark .enh-device-stage::before { border-color: rgba(255,255,255,.07); }
+html.dark .enh-device-shell { border-color: #2A2A2F; box-shadow: 0 30px 60px -24px rgba(0,0,0,.9); }
+html.dark .enh-story-tail, html.dark .enh-break-hint { color: #A1A1AA; }
+
+/* ---------- Theme toggle + circle reveal ---------- */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2147483646; }
+.theme-toggle {
+  position: relative; display: inline-grid; place-items: center; flex: none;
+  width: 44px; height: 44px; padding: 0; border-radius: 999px; cursor: pointer;
+  color: #130c0d; background: rgba(255,255,255,.4); border: 1px solid rgba(19,12,13,.14);
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.theme-toggle:hover { transform: rotate(-18deg) scale(1.06); background: rgba(255,255,255,.7); }
+.theme-toggle:active { transform: scale(.94); }
+.theme-toggle:focus-visible { outline: 2px solid #6e0b17; outline-offset: 3px; }
+.theme-toggle svg { display: block; }
+html.dark .theme-toggle { color: #EDEDEF; background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12); }
+html.dark .theme-toggle:hover { background: rgba(255,255,255,.09); border-color: rgba(240,80,94,.45); color: #FFD7DB; }
+html.dark .theme-toggle:focus-visible { outline-color: #F0505E; }
+.topnav .nav-actions { padding-right: env(safe-area-inset-right, 0px); }
+@media (max-width: 560px) { .theme-toggle { width: 44px; height: 44px; } }
+
+/* Subtle film grain over the whole dark page */
+html.dark body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 2147483000; opacity: .035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- v2: softer whites (less uncanny contrast) + visible stripe shadows ---------- */
+html.dark {
+  --soft-white: #C9C4BD;      /* dimmed headline white (was #F2EEE9) */
+  --soft-white-2: #B9B5AF;    /* closing / footer text */
+}
+
+/* Hero title */
+html.dark .hero h1, html.dark .hero h1 * { color: var(--soft-white) !important; }
+html.dark .hero h1 .enh-hero-punctuation { color: #F0505E !important; }
+html.dark .hero h1.kin-on .kin-ch { background-color: var(--soft-white) !important; filter: none !important; }
+html.dark .hero p.f-serif { color: #CFCFD4 !important; }
+
+/* Bottom of the page: closing headline, CTA and footer wordmark */
+html.dark .tone-ink { --paper: var(--soft-white-2) !important; --white: #D2CEC8 !important; color: var(--soft-white-2) !important; }
+html.dark .closing-title, html.dark .closing-title * { color: var(--soft-white) !important; }
+html.dark .tone-ink .cap .num { color: var(--soft-white-2); }
+html.dark .footer-logo { -webkit-text-stroke-color: var(--soft-white-2); background-image: linear-gradient(var(--soft-white-2), var(--soft-white-2)); }
+html.dark .tone-ink p[class*="text-[#B9B6B1]"] { color: #A9A59F !important; }
+
+/* Line-shadow stripes (Design approach morphing text): the default colour was near-black, so it vanished on dark */
+html.dark .da-ls { --ls-color: rgba(237,237,239,.5); }
+html.dark .da-promise-wrap .da-ls { --ls-color: rgba(255,122,133,.8); }
+
+/* ---------- v3: Design approach section — pure page-black, bolder/larger label text ---------- */
+html.dark #approach.enh-design-approach {
+  --da-paper: #0A0A0B;
+  background: #0A0A0B !important;
+  border-top-color: rgba(255,255,255,.08);
+}
+html.dark #approach .da-principles { border-bottom-color: rgba(255,255,255,.1); }
+html.dark #approach .da-principle,
+html.dark #approach.da-motion-ready .da-principle.is-active { background: transparent !important; box-shadow: none; border-color: rgba(255,255,255,.1) !important; }
+html.dark #approach .da-bottomline { border-top-color: rgba(255,255,255,.1); }
+
+/* Label / caption strips: larger, bolder, brighter */
+html.dark #approach.enh-design-approach .da-topline,
+html.dark #approach.enh-design-approach .da-bottomline,
+html.dark #approach.enh-design-approach .da-overline,
+html.dark #approach.enh-design-approach .da-current-meta,
+html.dark #approach.enh-design-approach .da-type-meta,
+html.dark #approach.enh-design-approach .da-spacing-caption,
+html.dark #approach.enh-design-approach .da-motion-note span,
+html.dark #approach.enh-design-approach .da-rs-device-head,
+html.dark #approach.enh-design-approach .da-rs-device-head span,
+html.dark #approach.enh-design-approach .da-rs-caption,
+html.dark #approach.enh-design-approach .da-replay {
+  font-size: 14px !important; font-weight: 700 !important; letter-spacing: .06em; color: #D0D0D6 !important;
+}
+html.dark #approach.enh-design-approach .da-type-meta span:first-child,
+html.dark #approach.enh-design-approach .da-rs-device-head b { font-size: 15px !important; font-weight: 700 !important; color: #F0F0F2 !important; }
+html.dark #approach.enh-design-approach .da-current-meta span:first-child,
+html.dark #approach.enh-design-approach .da-replay { color: #FF7A85 !important; }
+html.dark #approach.enh-design-approach .da-spacing-scale span { font-size: 15px; font-weight: 700; color: #D0D0D6; }
+html.dark #approach.enh-design-approach .da-card-head > span { font-size: 15px; font-weight: 700; }
+html.dark #approach.enh-design-approach .da-type-label .da-type-example { font-size: 13px; font-weight: 700; }
+html.dark #approach.enh-design-approach .da-step-nav button { font-size: 13px; font-weight: 700; color: #A8A8B0; }
+html.dark #approach.enh-design-approach .da-step-nav button.is-active { color: #FF7A85; }
+@media (max-width: 680px) {
+  html.dark #approach.enh-design-approach .da-topline,
+  html.dark #approach.enh-design-approach .da-bottomline,
+  html.dark #approach.enh-design-approach .da-overline,
+  html.dark #approach.enh-design-approach .da-current-meta,
+  html.dark #approach.enh-design-approach .da-type-meta,
+  html.dark #approach.enh-design-approach .da-spacing-caption,
+  html.dark #approach.enh-design-approach .da-rs-device-head,
+  html.dark #approach.enh-design-approach .da-rs-device-head span,
+  html.dark #approach.enh-design-approach .da-rs-caption { font-size: 13px !important; }
+}
+
+/* ---------- v7: no colour change after load ----------
+   The hero title waits for the mesh tiles (class set by the heading script), then fades in already striped. */
+html.dark:not(.cv-ready) .hero h1 { opacity: 0; }
+html.dark .hero h1 { transition: opacity .35s ease; }
+
+
+/* =====================================================================
+   v8: dark demo pages + macOS dark window chrome + big colourful dots
+   ===================================================================== */
+
+/* ---- macOS-style window chrome (dark) ---- */
+html.dark .browser { background: #000; border-radius: 12px; }
+html.dark .browser-bar,
+html.dark .enh-browser-top {
+  background: linear-gradient(180deg, #38383c 0%, #2c2c2f 100%) !important;
+  border-bottom: 1px solid #0f0f10 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+}
+html.dark .browser-bar { height: clamp(30px, 3vw, 44px); }
+html.dark .browser-bar .url,
+html.dark .enh-browser-url {
+  background: rgba(255,255,255,.08) !important; color: #b4b4bc !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+html.dark .enh-browser { background: #000; border-color: rgba(255,255,255,.1); border-radius: 12px; }
+html.dark .enh-browser-top { height: 6.4cqw; min-height: 32px; max-height: 48px; gap: 0; padding: 0 2.2cqw; }
+
+/* ---- Bigger traffic-light dots: red / yellow / green ---- */
+html.dark .browser-bar .dots { gap: clamp(7px, .8vw, 10px); }
+html.dark .browser-bar .dots i,
+html.dark .enh-browser-dot {
+  width: clamp(11px, 1.05vw, 15px) !important; height: clamp(11px, 1.05vw, 15px) !important;
+  min-width: 11px !important; min-height: 11px !important;
+  border-radius: 50%; position: relative;
+  box-shadow: inset 0 0 0 .5px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.25);
+}
+html.dark .enh-browser-dot { margin-right: clamp(7px, .8cqw, 10px); }
+html.dark .browser-bar .dots i:nth-child(1), html.dark .enh-browser-dot:nth-of-type(1) { background: #ff5f57 !important; }
+html.dark .browser-bar .dots i:nth-child(2), html.dark .enh-browser-dot:nth-of-type(2) { background: #febc2e !important; }
+html.dark .browser-bar .dots i:nth-child(3), html.dark .enh-browser-dot:nth-of-type(3) { background: #28c840 !important; }
+html.dark .browser-bar .dots i, html.dark .enh-browser-dot { transition: filter .2s ease; }
+html.dark .browser-bar:hover .dots i, html.dark .enh-browser-top:hover .enh-browser-dot { filter: brightness(1.12) saturate(1.1); }
+
+/* Responsive-chapter device frame */
+html.dark .enh-device-shell { background: #000; border-color: #2e2e33; }
+html.dark .enh-device-shell::after { background: linear-gradient(to bottom, rgba(255,255,255,.07), transparent); }
+
+/* ---- Dark page content inside the mock screens ---- */
+html.dark .enh-scene, html.dark .enh-device-inner, html.dark .m-page, html.dark .hero-stage .m-page, html.dark .phone-screen:not(.dark),
+html.dark .rs, html.dark .da-rs-screen { background: #000 !important; color: #ededef; }
+html.dark .enh-mobile-scene { background: #000 !important; }
+html.dark .enh-site-logo, html.dark .enh-home-content h4, html.dark .enh-services-content h4,
+html.dark .enh-about-content h4, html.dark .enh-service-row b, html.dark .enh-device-content h4 { color: #ededef; }
+html.dark .enh-home-content p, html.dark .enh-about-content p, html.dark .enh-device-content p,
+html.dark .enh-service-row, html.dark .enh-site-links, html.dark .enh-site-footer { color: #b4b4bc; }
+html.dark .enh-site-eyebrow, html.dark .enh-service-row small { color: #8b8b94; }
+html.dark .enh-device-kicker { color: #ff9a8a; }
+html.dark .enh-about-steps { color: #ff7a85; }
+html.dark .enh-mini-cta, html.dark .enh-device-button { background: #ededef; color: #131315; }
+html.dark .enh-home-actions span:last-child { border-color: rgba(255,255,255,.25); color: #ededef; }
+html.dark .enh-site-footer, html.dark .enh-device-grid { border-color: rgba(255,255,255,.1); }
+html.dark .enh-service-list { border-top-color: rgba(255,255,255,.18); }
+html.dark .enh-service-row { border-bottom-color: rgba(255,255,255,.1); }
+html.dark .enh-photo-frame, html.dark .enh-device-grid div { background: #2a2a2e; }
+html.dark .enh-photo-frame::after { background: #000; color: #d4d4d8; }
+html.dark .enh-photo-frame img { filter: saturate(.8) brightness(.88); }
+html.dark .enh-mini-phone { background: #000; border-color: #0b0b0c; color: #ededef; }
+html.dark .enh-mini-phone:nth-child(2) { background: #2a2622; }
+html.dark .enh-mini-phone:nth-child(3) { background: #0f0f11; }
+html.dark .enh-phone-bar { background: #ededef; }
+html.dark .da-rs-screen { border-color: rgba(255,255,255,.12) !important; }
+
+/* ---------- v9: hero heading looks identical before and after the kinetic letters start ----------
+   While the heading is being typed it is plain text; once typing ends, JS splits it into .kin-ch letters painted
+   with the silk mesh. Paint the typed text with the same mesh + base colour so there is no colour swap. */
+html.dark .hero h1:not(.kin-on) .zh-type > span:first-child {
+  background-color: var(--soft-white);
+  background-image: var(--cv-sec-dt);
+  background-repeat: repeat-x;
+  background-size: 800px 100%;
+  background-position: 0 0;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent !important;
+  font-weight: 900;
+}
+/* The reveal gate waits only for the mesh tiles, which the typed text now uses too */
+html.dark:not(.cv-ready) .hero h1 { opacity: 0; }
+
+/* ---------- v10: hero stripes match the closing headline ----------
+   Same mesh tile and base colour as the bottom text; the pink-red glow around each hero letter is removed
+   (it tinted the stripes lighter than the closing headline's) and the heading sits on no extra red wash. */
+html.dark .hero h1.kin-on .kin-ch { filter: none !important; -webkit-filter: none !important; }
+html.dark .hero h1.kin-on, html.dark .hero h1 .mask { filter: none !important; }
+
+
+/* ---------- v12: demo pages are fully black (the hero browser mock + every .m-page) ---------- */
+html.dark .m-page, html.dark .hero-stage .m-page, html.dark .hero-stage .m-hero {
+  background: #000 !important; background-image: none !important; color: #ededef;
+}
+html.dark .m-nav, html.dark .m-logo, html.dark .m-h1, html.dark .m-h2, html.dark .m-card-t, html.dark .m-f-txt b,
+html.dark .m-proof-t b, html.dark .m-f-v { color: #f4f4f5 !important; }
+html.dark .hero-stage .m-h1 .m-em { color: #ff7a85; }
+html.dark .m-p, html.dark .hero-stage .m-p, html.dark .m-links, html.dark .m-eyebrow, html.dark .hero-stage .m-eyebrow,
+html.dark .m-proof, html.dark .m-f-l, html.dark .m-f-k, html.dark .m-f-txt small, html.dark .m-card { color: #a1a1aa !important; }
+html.dark .m-card { background: #0e0e10 !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+html.dark .m-index, html.dark .m-f-v small { color: #ff7a85; }
+html.dark .m-proof, html.dark .m-strip, html.dark .m-steps { border-top-color: rgba(255,255,255,.14) !important; }
+html.dark .hero-stage .m-ctas .m-pill:not(.out), html.dark .m-pill { background: #ededef !important; color: #000 !important; box-shadow: none; }
+html.dark .hero-stage .m-ctas .m-pill.out { background: transparent !important; color: #ededef !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.28); }
+html.dark .m-float { background: rgba(18,18,20,.92) !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 2cqw 3cqw -1.5cqw rgba(0,0,0,.9); color: #ededef; }
+html.dark .hero-stage .m-tag, html.dark .m-tag { background: rgba(0,0,0,.78) !important; color: #d4d4d8; }
+html.dark .m-ring-bg { stroke: rgba(255,255,255,.14); }
+html.dark .m-ring-fg { stroke: #4ade80; } html.dark .m-f-ring-n { color: #86efac; }
+html.dark .m-spark-a { stroke: #ff7a85; } html.dark .m-spark-b { fill: rgba(240,80,94,.14); }
+html.dark .hero-stage .m-hero-r::before { border-color: rgba(240,80,94,.4); }
+html.dark .hero-stage .m-hero-r img { filter: brightness(.9); box-shadow: 0 3cqw 4cqw -2.4cqw rgba(0,0,0,.9); }
+html.dark .m-av { box-shadow: 0 0 0 .22cqw #000; }
+html.dark .m-sep { background: #52525b; }
+
+/* ---------- v13: every remaining light piece of the demo pages goes black ----------
+   Covers the scroll-chapter screens (.enh-*, .v67-*) and the responsive device screens (.rp-*). */
+html.dark .enh-site-nav, html.dark .enh-home-content, html.dark .enh-services-content, html.dark .enh-about-content,
+html.dark .v67-svc, html.dark .rp-nav, html.dark .rp-hero, html.dark .rp-work, html.dark .enh-device-nav,
+html.dark .enh-device-content, html.dark .enh-device-text { background: transparent; color: #ededef; }
+html.dark .enh-device-inner, html.dark .enh-device-inner > * { --_bg: #000; }
+html.dark .enh-device-inner { background: #000 !important; }
+html.dark .enh-device-inner [class*="rp-"]:not(.rp-card):not(.rp-chip):not(.rp-btn):not(.rp-cta):not(.rp-pill) { background-color: transparent; }
+
+/* Text */
+html.dark .rp-logo, html.dark .rp-nav, html.dark .rp-text h4, html.dark .rp-card b, html.dark .rp-proof b,
+html.dark .v67-wcard b, html.dark .v67-svc-card b, html.dark .v67-svc-head h4, html.dark .v67-steps b,
+html.dark .enh-home-content.v67-home h4, html.dark .enh-about-content.v67-about h4, html.dark .v67-proof b,
+html.dark .v67-prow b, html.dark .v67-ph h5, html.dark .enh-device-proof b, html.dark .enh-home-proof b,
+html.dark .enh-services-note b { color: #f4f4f5 !important; }
+html.dark .rp-links, html.dark .rp-text p, html.dark .rp-proof small, html.dark .rp-card small, html.dark .rp-pill,
+html.dark .rp-chip, html.dark .v67-pill, html.dark .v67-proof, html.dark .v67-svc-card p, html.dark .v67-svc-card li,
+html.dark .v67-svc-foot, html.dark .v67-steps small, html.dark .v67-wcard small, html.dark .v67-num,
+html.dark .v67-steps span, html.dark .v67-svc-note, html.dark .v67-peyebrow, html.dark .v67-prow small,
+html.dark .v67-ph p, html.dark .v67-note span, html.dark .enh-home-content.v67-home p, html.dark .enh-about-content.v67-about p,
+html.dark .enh-device-proof small, html.dark .enh-home-proof small, html.dark .enh-about-proof small { color: #a1a1aa !important; }
+html.dark .rp-text h4 em, html.dark .rp-chip b, html.dark .v67-note b, html.dark .v67-prow i,
+html.dark .v67-svc-tag, html.dark .v67-svc-card .v67-ico, html.dark .enh-about-proof b, html.dark .enh-services-note span,
+html.dark .enh-services-note i, html.dark .enh-photo-index i, html.dark .v67-ph:nth-child(2) h5 em { color: #ff7a85 !important; }
+
+/* Buttons + pills */
+html.dark .rp-cta, html.dark .rp-btn:not(.ghost), html.dark .v67-pbtn, html.dark .enh-mini-cta { background: #ededef !important; color: #000 !important; box-shadow: none; }
+html.dark .rp-btn.ghost, html.dark .v67-home .enh-home-actions span:last-child { background: transparent !important; color: #ededef !important; border: 1px solid rgba(255,255,255,.28) !important; }
+html.dark .v67-pfoot .v67-pbtn { background: #ededef !important; color: #000 !important; }
+html.dark .rp-pill, html.dark .v67-pill { background: rgba(255,255,255,.06) !important; border-color: rgba(255,255,255,.14) !important; }
+html.dark .v67-svc-tag { border-color: rgba(240,80,94,.4); }
+
+/* Cards, notes, chips */
+html.dark .rp-card:not(.rp-card-note), html.dark .v67-wcard, html.dark .v67-prow {
+  background: #0e0e10 !important; border: 1px solid rgba(255,255,255,.1) !important;
+  box-shadow: 0 2.2cqw 2.6cqw -1.5cqw rgba(0,0,0,.9) !important;
+}
+html.dark .v67-svc-card:not(.is-feature) { background: #0e0e10 !important; border-color: rgba(255,255,255,.1) !important; box-shadow: none; }
+html.dark .v67-svc-card ul { border-top-color: rgba(255,255,255,.1); }
+html.dark .v67-ico { background: rgba(255,255,255,.06); }
+html.dark .rp-chip, html.dark .v67-note, html.dark .v67-studio-tag, html.dark .enh-photo-index {
+  background: rgba(14,14,16,.94) !important; color: #d4d4d8 !important; border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 1.2cqw 1.8cqw -1cqw rgba(0,0,0,.9);
+}
+html.dark .enh-services-note { background: #0e0e10; color: #d4d4d8; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+html.dark .v67-wtag { background: #0e0e10; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+
+/* Dividers + dots */
+html.dark .rp-proof, html.dark .enh-device-proof, html.dark .v67-proof, html.dark .enh-home-proof,
+html.dark .enh-about-proof, html.dark .v67-steps li { border-top-color: rgba(255,255,255,.12) !important; }
+html.dark .v67-proof em, html.dark .v67-svc-note i, html.dark .enh-service-note i { background: #52525b; }
+html.dark .v67-avs i { border-color: #000; }
+html.dark .v67-steps li:not(:first-child)::before { background: #000; }
+html.dark .v67-parch, html.dark .v67-arch { box-shadow: 0 0 0 .2cqw rgba(255,255,255,.1), 0 2.4cqw 3cqw -1.8cqw rgba(0,0,0,.9); }
+
+/* Phones inside the mobile scene */
+html.dark .v67-mobile { background: #000 !important; }
+html.dark .v67-ph { background: #0e0e10; color: #ededef; border-color: #1c1c1f; box-shadow: 0 0 0 .18cqw #2e2e33, 0 2.6cqw 3cqw -1.2cqw rgba(0,0,0,.9); }
+html.dark .v67-ph:nth-child(2) { background: #151215; box-shadow: 0 0 0 .18cqw #3a3a40, 0 3.4cqw 4cqw -1.4cqw rgba(0,0,0,.9), 0 0 6cqw rgba(240,80,94,.1); }
+html.dark .v67-ph:nth-child(3) { background: #000; }
+html.dark .v67-island { background: #000; }
+html.dark .v67-ptabs i { background: rgba(255,255,255,.2); }
+
+/* ---------- v14: backgrounds behind the demo pages are black too ---------- */
+html.dark #screens, html.dark #responsive, html.dark #details,
+html.dark #screens.tone-paper, html.dark #responsive.tone-paper, html.dark #details.tone-paper,
+html.dark .enh-story-track, html.dark .enh-break-track,
+html.dark .enh-story-sticky, html.dark .enh-break-sticky { background: #000 !important; }
+html.dark .enh-story-canvas, html.dark .enh-device-stage {
+  background: #000 !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+html.dark .enh-story-intro { background: #000; border: 1px solid rgba(255,255,255,.1); }
+html.dark .enh-story-canvas::before, html.dark .enh-device-stage::before { border-color: rgba(255,255,255,.08); }
+html.dark .enh-canvas-star { color: rgba(255,255,255,.12); }
+html.dark .da-rs-screen, html.dark .da-rs-device { background: #000 !important; }
+html.dark .da-responsive-visual i { background: #000; border-color: rgba(255,255,255,.28); }
+html.dark .da-responsive-visual b { color: #d4d4d8; } html.dark .da-responsive-visual span { color: #a1a1aa; }
+html.dark .da-responsive-rule { color: #b4b4bc; }
+
+/* =====================================================================
+   v15: performance — smoother header mesh, smoother vertical scroll
+   ===================================================================== */
+
+/* Hero mesh drift: the old version animated an INHERITED custom property on the <h1>, which re-styled every
+   letter on every frame. Now each letter drifts its own background-position directly (no inheritance, no
+   cascade), in 1px steps (~20fps — the drift is slow, so it still reads as continuous), and it is paused while
+   scrolling or off-screen. */
+@keyframes kin-drift {
+  from { background-position: calc(0px - var(--ox, 0px)) 0; }
+  to   { background-position: calc(800px - var(--ox, 0px)) 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1.kin-on { animation: none !important; }
+  .hero h1.kin-on .kin-ch { animation: kin-drift 38s steps(760) infinite; }
+  .hero h1.kin-on.kin-offscreen .kin-ch,
+  .is-scrolling .hero h1.kin-on .kin-ch { animation-play-state: paused; }
+}
+.hero h1.kin-on .kin-ch { background-position: calc(0px - var(--ox, 0px)) 0; image-rendering: auto; background-size: 800px 100%; }
+
+/* Chapter progress bars: GPU scale instead of animating width (which forced layout every scroll frame) */
+.enh-step::after { width: 100% !important; transform: scaleX(var(--sp, 0)); transform-origin: 0 50%; will-change: transform; }
+
+/* Pinned chapters: isolate their layout/style from the rest of the page */
+.enh-story-sticky, .enh-break-sticky { contain: layout style; }
+/* Hidden scenes are not painted at all (previously 4 stacked, blurred, clip-pathed layers were all rendered) */
+.enh-scene:not(.is-active) {
+  filter: none !important; visibility: hidden;
+  transition: opacity .65s ease, clip-path .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1), visibility 0s linear .85s !important;
+}
+.enh-scene.is-active { visibility: visible; transition-delay: 0s !important; }
+
+/* Remove always-on, expensive paint effects */
+html.dark body::after { display: none !important; }                       /* full-screen film-grain layer */
+html.dark img:not(.browser img):not(.enh-browser img):not(.phone-screen img) { filter: none !important; }
+html.dark .topnav { -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
+html.dark .m-float, html.dark .hero-stage .m-tag, html.dark .m-tag, html.dark .v67-note, html.dark .rp-chip {
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+}
+html.dark .enh-browser { box-shadow: 0 0 0 1px rgba(255,255,255,.07), 0 30px 60px -30px rgba(0,0,0,.9) !important; }
+html.dark .hero .browser { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 30px 60px -30px rgba(0,0,0,.9) !important; }
+.is-scrolling .m-float, .is-scrolling .v67-note { animation-play-state: paused !important; }
+
+/* ---------- v16: the responsive demo page itself (.rp) was still cream ---------- */
+html.dark .enh-device-inner > .rp,
+html.dark .enh-device-inner .rp { background: #000 !important; color: #ededef !important; }
+html.dark .enh-device-shell, html.dark .enh-device-inner { background: #000 !important; }
+html.dark .rp-line { border-left-color: rgba(255,255,255,.4); border-right-color: rgba(255,255,255,.4); }
+html.dark .rp-line::before { border-top-color: rgba(255,255,255,.3); }
+html.dark .rp-readout { background: #0e0e10; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+html.dark .rp-art img { box-shadow: 0 2cqw 2.6cqw -1.6cqw rgba(0,0,0,.9); }
+
+
+/* =====================================================================
+   v17: laptop showcase demo page — dark theme + macOS dark window chrome
+   ===================================================================== */
+html.dark .lm-screen { background: #000 !important; color: #ededef !important; }
+html.dark .lm-glass { background: linear-gradient(118deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 24%, rgba(255,255,255,0) 38%); box-shadow: inset 0 0 1.4cqw rgba(0,0,0,.5); }
+
+/* macOS dark title bar + big colourful traffic lights */
+html.dark .lm-chrome {
+  height: 3.9cqw; gap: .95cqw; padding: 0 1.8cqw;
+  background: linear-gradient(180deg, #38383c 0%, #2c2c2f 100%) !important;
+  border-bottom: 1px solid #0f0f10 !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+}
+html.dark .lm-chrome > i {
+  width: 1.35cqw; height: 1.35cqw; flex: none;
+  box-shadow: inset 0 0 0 .05cqw rgba(0,0,0,.35), inset 0 .1cqw .1cqw rgba(255,255,255,.25);
+}
+html.dark .lm-chrome > i:nth-child(1) { background: #ff5f57 !important; }
+html.dark .lm-chrome > i:nth-child(2) { background: #febc2e !important; }
+html.dark .lm-chrome > i:nth-child(3) { background: #28c840 !important; }
+html.dark .lm-url { top: .9cqw; height: 2.1cqw; background: rgba(255,255,255,.08) !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+html.dark .lm-url span { color: #b4b4bc !important; }
+html.dark .lm-live { top: 1.4cqw; color: #d4d4d8 !important; }
+html.dark .lm-live b { background: #28c840 !important; box-shadow: 0 0 0 .3cqw rgba(40,200,64,.2); }
+html.dark .lm-paper { top: 3.9cqw; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) !important; }
+html.dark .lm-sketch * { stroke: #a1a1aa; }
+
+/* Page content */
+html.dark .lm-mark, html.dark .lm-h { color: #f4f4f5 !important; }
+html.dark .lm-links { color: #b4b4bc !important; }
+html.dark .lm-eyebrow { color: #a1a1aa !important; }
+html.dark .lm-p { color: #b4b4bc !important; }
+html.dark .lm-feels i { color: #ff7a85 !important; }
+html.dark .lm-cta, html.dark .lm-btn.s { background: #ededef !important; color: #000 !important; }
+html.dark .lm-btn.o { box-shadow: inset 0 0 0 1px rgba(255,255,255,.4) !important; color: #ededef !important; }
+html.dark .lm-panel { background: #0e0e10 !important; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); color: #ededef; }
+html.dark .lm-panel-cap { color: #a1a1aa !important; }
+
+/* The three study cards (colours are inline, so !important) */
+html.dark .lm-cards .lm-card { box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+html.dark .lm-cards .lm-card:nth-child(1) { background: #0e0e10 !important; color: #ededef !important; }
+html.dark .lm-cards .lm-card:nth-child(2) { background: #1a1a1d !important; color: #ededef !important; }
+html.dark .lm-cards .lm-card:nth-child(3) { background: #000 !important; color: #ededef !important; }
+html.dark .lm-cards .lm-card img { filter: brightness(.8); }
+
+/* Keyword strip */
+html.dark .lm-strip { border-top-color: rgba(255,255,255,.12) !important; background: rgba(255,255,255,.04) !important; }
+html.dark .lm-strip-row span { color: #a1a1aa !important; }
+html.dark .lm-strip-row span::after { background: #ff7a85; }
+
+/* Cursor */
+html.dark .lm-cursor path { fill: #ededef; stroke: #000; }
+
+/* Laptop body: space-grey base instead of silver */
+html.dark .lm-base {
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, rgba(0,0,0,.04) 1px 3px), linear-gradient(#3a3a3d, #2c2c2f 45%, #202022 85%, #151516);
+  box-shadow: inset 0 .14cqw 0 rgba(255,255,255,.18), inset 0 -.2cqw .3cqw rgba(0,0,0,.5);
+}
+html.dark .lm-base::before { background: linear-gradient(#18181a, #26262a); }
+html.dark .lm-brand-chin { color: #8b8b94; }
+
+
+/* =====================================================================
+   v18: legibility — small grey text is brighter and never tiny in dark mode
+   ===================================================================== */
+
+/* ---- Page-level labels around the laptop showcase ---- */
+html.dark .lm-kicker { font-size: 13px !important; color: #D0D0D6 !important; }
+html.dark .lm-row-n { font-size: 13px !important; width: 26px; color: #C4C4CC !important; }
+html.dark .lm-row-t { color: #F4F4F5 !important; }
+html.dark .lm-row-d { font-size: 16px !important; color: #C4C4CC !important; }
+html.dark .lm-row-note { font-size: 13px !important; line-height: 1.4; color: #C4C4CC !important; }
+html.dark .lm-fig { font-size: 12px !important; color: #B4B4BC !important; }
+html.dark .lm-lede { color: #CFCFD6 !important; }
+html.dark .lm-now-k, html.dark .lm-now-n { color: #C4C4CC !important; }
+html.dark .cap, html.dark .cap span { color: #C4C4CC; }
+html.dark .f-mono, html.dark [class*="f-mono"] { color: inherit; }
+html.dark p.f-mono, html.dark span.f-mono, html.dark div.f-mono { color: #C4C4CC; }
+
+/* ---- Laptop screen: brighter text, sensible minimum sizes (no container queries here, so max() is safe) ---- */
+html.dark .lm-eyebrow { font-size: max(1.15cqw, 10px) !important; color: #D0D0D6 !important; }
+html.dark .lm-links { font-size: max(1.1cqw, 10px) !important; color: #D4D4D8 !important; }
+html.dark .lm-mark { font-size: max(1.1cqw, 10px) !important; }
+html.dark .lm-cta, html.dark .lm-btn { font-size: max(1.1cqw, 10px) !important; }
+html.dark .lm-p { font-size: max(1.5cqw, 11px) !important; color: #D0D0D6 !important; }
+html.dark .lm-url span { font-size: max(1.05cqw, 9px) !important; color: #D0D0D6 !important; }
+html.dark .lm-live { font-size: max(.95cqw, 9px) !important; color: #E4E4E7 !important; }
+html.dark .lm-card small { font-size: max(.95cqw, 9px) !important; opacity: .95 !important; color: #C4C4CC; }
+html.dark .lm-card b { font-size: max(1.75cqw, 12px) !important; }
+html.dark .lm-panel-cap { font-size: max(1cqw, 9px) !important; color: #D0D0D6 !important; }
+html.dark .lm-strip-row span { font-size: max(.9cqw, 9px) !important; color: #D0D0D6 !important; }
+
+/* ---- Demo pages (browser + phone mocks): brighter greys ---- */
+html.dark .m-p, html.dark .hero-stage .m-p, html.dark .m-links, html.dark .m-eyebrow, html.dark .hero-stage .m-eyebrow,
+html.dark .m-proof, html.dark .m-f-l, html.dark .m-f-k, html.dark .m-f-txt small, html.dark .m-card,
+html.dark .enh-home-content p, html.dark .enh-about-content p, html.dark .enh-site-links, html.dark .enh-site-footer,
+html.dark .enh-service-row, html.dark .enh-site-eyebrow, html.dark .enh-service-row small,
+html.dark .rp-links, html.dark .rp-text p, html.dark .rp-proof small, html.dark .rp-card small, html.dark .rp-pill, html.dark .rp-chip,
+html.dark .v67-pill, html.dark .v67-proof, html.dark .v67-svc-card p, html.dark .v67-svc-card li, html.dark .v67-svc-foot,
+html.dark .v67-steps small, html.dark .v67-wcard small, html.dark .v67-num, html.dark .v67-steps span, html.dark .v67-svc-note,
+html.dark .v67-peyebrow, html.dark .v67-prow small, html.dark .v67-ph p, html.dark .v67-note span,
+html.dark .enh-home-content.v67-home p, html.dark .enh-about-content.v67-about p, html.dark .enh-device-proof small,
+html.dark .enh-home-proof small, html.dark .enh-about-proof small, html.dark .enh-device-content p { color: #CFCFD6 !important; }
+html.dark .enh-device-kicker { color: #FF9AA4 !important; }
+
+/* Floor for the tiniest mono labels in the browser mocks (these scenes have no container-query size overrides) */
+html.dark .enh-browser .enh-site-eyebrow, html.dark .enh-browser .v67-wcard small, html.dark .enh-browser .v67-num,
+html.dark .enh-browser .v67-steps span, html.dark .enh-browser .v67-peyebrow, html.dark .enh-browser .v67-prow small,
+html.dark .enh-browser .v67-svc-foot, html.dark .enh-browser .v67-note span, html.dark .enh-browser .v67-studio-tag,
+html.dark .enh-browser .v67-wtag, html.dark .enh-browser .enh-photo-index, html.dark .enh-browser .enh-photo-frame::after,
+html.dark .enh-browser .enh-home-proof small, html.dark .enh-browser .enh-about-proof small, html.dark .enh-browser .v67-svc-note { font-size: max(1.05cqw, 9.5px) !important; }
+
+/* ---- Chapter chrome (left panels, step lists, captions) ---- */
+html.dark .enh-step { color: #BDBDC5; font-size: 13px; }
+html.dark .enh-step:hover, html.dark .enh-step.is-active { color: #F4F4F5; }
+html.dark .enh-micro { font-size: 11px; color: #D0D0D6; }
+html.dark .enh-story-description, html.dark .enh-break-description { color: #D0D0D6 !important; }
+html.dark .enh-story-count, html.dark .enh-break-count { font-size: 11px; }
+html.dark .enh-story-tail, html.dark .enh-break-hint { font-size: 12px; color: #C4C4CC; }
+html.dark .enh-story-canvas::after, html.dark .enh-device-stage::after { font-size: 10px; color: #C4C4CC; }
+
+/* Theme toggle: just the sun / moon icon, no circle, border or fill */
+.theme-toggle, html.dark .theme-toggle,
+.theme-toggle:hover, html.dark .theme-toggle:hover,
+.theme-toggle:active, html.dark .theme-toggle:active {
+  background: transparent !important; border: 0 !important; box-shadow: none !important;
+  border-radius: 0; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+}
+.theme-toggle:hover { transform: rotate(-18deg) scale(1.12); opacity: .85; }
+.theme-toggle svg { width: 22px; height: 22px; }
+
+/* Hero mesh flows while the heading is still typing, on the same 38s clock as the final letters */
+@keyframes kin-type-drift { from { background-position: 0 0; } to { background-position: 800px 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  html.dark .hero h1:not(.kin-on) .zh-type > span:first-child { animation: kin-type-drift 38s steps(760) infinite; }
+  .hero h1.kin-on .kin-ch { animation-delay: var(--kin-delay, 0s); }
+}
+
+
+/* ---------- v13: uncropped italic "f" in "feels" ----------
+   .lm-line is an overflow:hidden reveal mask. The italic f overhangs its box on the left (and its hook/descender
+   top and bottom), so the mask sliced it. Give the mask room on every side and cancel the extra space with
+   matching negative margins, so the text does not move. */
+/* flex column stops the two lines' negative margins from collapsing (which pushed line 2 down and left the oval off-centre) */
+.lm-h { display: flex !important; flex-direction: column; align-items: flex-start; }
+.lm-line {
+  padding: .14em .22em .3em .22em !important;
+  margin: -.14em -.22em -.3em -.22em !important;
+}
+.lm-feels { padding-left: .06em; padding-right: .05em !important; margin-left: -.06em; margin-right: 0; }
+
+/* ---------- v13: smooth, continuous wave ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html.dark .hero h1:not(.kin-on) .zh-type > span:first-child { animation: kin-type-drift 38s linear infinite !important; }
+}
+.is-scrolling .hero h1.kin-on { animation-play-state: running !important; }
+.hero h1.kin-on.kin-offscreen { animation-play-state: paused !important; }
+.hero h1.kin-on .kin-ch { will-change: auto !important; image-rendering: auto; }
+
+/* ---------- v14: seamless typing -> final letters, sharper mesh ----------
+   One clock (--kin-flow on the h1) drives the mesh in BOTH phases, with identical tile size and vertical
+   alignment, so nothing jumps when the typed text turns into letters. */
+@media (prefers-reduced-motion: no-preference) {
+  html.dark .hero h1 { animation: kin-flow 38s linear infinite !important; }
+  html.dark .hero h1:not(.kin-on) .zh-type > span:first-child { animation: none !important; }
+}
+html.dark .hero h1:not(.kin-on) .zh-type > span:first-child {
+  background-size: 800px 1.6em !important;
+  background-position: var(--kin-flow) 50% !important;
+  background-origin: content-box;
+}
+html.dark .hero h1.kin-on .kin-ch {
+  background-size: 800px 1.6em !important;
+  background-position: calc(var(--kin-flow) - var(--ox, 0px)) 50% !important;
+  background-origin: content-box;
+}
+
+/* ---------- v15: the "?" is the same wave as the rest, over an oxblood-red base (like v72's clay "?") ---------- */
+html.dark .closing-title .text-\[var\(--clay\)\] { color: #c8283d !important; -webkit-text-fill-color: #c8283d !important; }
+html.dark .closing-title .cv-layer .text-\[var\(--clay\)\] { color: transparent !important; -webkit-text-fill-color: transparent !important; }
+
+/* ---------- v16: "feels" is a single text (see enhancements.js) ---------- */
+.lm-feels i { display: none !important; }
+
+/* ---------- v17: bold "feels" + an oval that is part of the word (always centred on it) ----------
+   The old pencil oval was an SVG ellipse at a fixed position, so any shift of the text left it off-centre.
+   It is hidden; the same oval is now drawn on the word itself, following the original ellipse's fade and
+   left-to-right draw (see enhancements.js). */
+.lm-sketch ellipse { display: none !important; }
+.lm-feels { font-weight: 600 !important; font-synthesis: none; }
+.lm-feels::after {
+  content: ""; position: absolute; pointer-events: none;
+  left: -.2em; right: -.14em; top: .02em; bottom: -.06em;
+  border: max(1px, .11cqw) solid rgba(237, 237, 239, .5); border-radius: 50%;
+  transform: rotate(-3deg);
+  opacity: var(--ring-o, 0); clip-path: var(--ring-clip, inset(-20% 100% -20% -20%));
+}
+html.light .lm-feels::after, html:not(.dark) .lm-feels::after { border-color: rgba(18, 18, 18, .42); }
